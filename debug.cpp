@@ -101,7 +101,7 @@ void printFields(int* p)
 template <typename T>
 void pack(T* pFloat, int* p)
 {
-	cout << "\n#FUNCTION PACK  \n";
+	cout << "\n#FUNCTION pack(T* pFloat, int* p)\n";
 
 	short int* pShort = reinterpret_cast<short int*>(pFloat);
 
