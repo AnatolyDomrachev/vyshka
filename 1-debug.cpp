@@ -20,7 +20,7 @@ void binaryDump(short int n, int* p)
 	{
 		p[15-i-1] = n & mask ? 1 : 0;
 
-		cout << "#	Теперь p["<< 15-i-1 << "] = " << (n & mask ? 1 : 0) << endl;
+		cout << "#	Теперь p["<< 15-i-1 << "] = " << (n < 0 ? 1 : 0) << endl;
 	}
 
 	// 14 - 0
@@ -136,7 +136,7 @@ int main()
 	cout << "#FUNCTION MAIN  \n";
 
 	int* p; // указатель, указывает на область памяти, в которой хранится число типа int
-	float f(-1.0);
+	float f(1.0);
 
 	cout << "#	Теперь f = " << f<< endl;
 
