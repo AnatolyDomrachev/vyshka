@@ -27,6 +27,9 @@
 #	Теперь p[2] = 1
 #	Теперь p[1] = 1
 #	Теперь p[0] = 1
+
+# END FUNCTION binaryDump(short int n, int* p)
+
 #	Теперь index = 0
 #	Вызов функции binaryDump(pShort[index], p + 16 * index);
 
@@ -48,12 +51,21 @@
 #	Теперь p[2] = 0
 #	Теперь p[1] = 0
 #	Теперь p[0] = 0
+
+# END FUNCTION binaryDump(short int n, int* p)
+
+
+# END FUNCTION pack(T* pFloat, int* p)
+
 #	Вызов функции print<float>(p);
 
 #FUNCTION print(int* p)
 #	Теперь size = 4
 #	Вывод p[size-i-1] в при (int i = 0; i < size; ++i) 
 10111111100000000000000000000000
+
+# END FUNCTION print(int* p)
+
 #	Вызов функции printFields<float>(p);
 #FUNCTION printFields(int* p)
 #	Теперь size = 32
@@ -61,6 +73,8 @@
 0#	Вывод p[size-1-i-1] при  (int i = 0; i < 8; ++i)
  01111111#	Вывод p[size-8-i-2] при  (int i = 0; i < 23; ++i)
  00000000000000000000000
+# END FUNCTION printFields(int* p)
+
 
 #	Теперь d = -1
 #	Теперь p это массив из 64 элементов int 
@@ -90,6 +104,9 @@
 #	Теперь p[2] = 1
 #	Теперь p[1] = 1
 #	Теперь p[0] = 1
+
+# END FUNCTION binaryDump(short int n, int* p)
+
 #	Теперь index = 2
 #	Вызов функции binaryDump(pShort[index], p + 16 * index);
 
@@ -111,6 +128,9 @@
 #	Теперь p[2] = 0
 #	Теперь p[1] = 0
 #	Теперь p[0] = 0
+
+# END FUNCTION binaryDump(short int n, int* p)
+
 #	Теперь index = 1
 #	Вызов функции binaryDump(pShort[index], p + 16 * index);
 
@@ -132,6 +152,9 @@
 #	Теперь p[2] = 0
 #	Теперь p[1] = 0
 #	Теперь p[0] = 0
+
+# END FUNCTION binaryDump(short int n, int* p)
+
 #	Теперь index = 0
 #	Вызов функции binaryDump(pShort[index], p + 16 * index);
 
@@ -153,12 +176,21 @@
 #	Теперь p[2] = 0
 #	Теперь p[1] = 0
 #	Теперь p[0] = 0
+
+# END FUNCTION binaryDump(short int n, int* p)
+
+
+# END FUNCTION pack(T* pFloat, int* p)
+
 #	Вызов функции print<double>(p);
 
 #FUNCTION print(int* p)
 #	Теперь size = 8
 #	Вывод p[size-i-1] в при (int i = 0; i < size; ++i) 
 1011111111110000000000000000000000000000000000000000000000000000
+
+# END FUNCTION print(int* p)
+
 #	Вызов функции printFields<double>(p);
 #FUNCTION printFields(int* p)
 #	Теперь size = 64
@@ -166,3 +198,5 @@
 0#	Вывод p[size-1-i-1] при (int i = 0; i < 11; ++i)
  01111111111#	Вывод p[size-11-i-2] при (int i = 0; i < 52; ++i)
  0000000000000000000000000000000000000000000000000000
+# END FUNCTION printFields(int* p)
+

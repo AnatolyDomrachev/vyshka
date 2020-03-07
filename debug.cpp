@@ -24,6 +24,7 @@ void binaryDump(short int n, int* p)
 	}
 
 	// 14 - 0
+	cout << "\n# END FUNCTION binaryDump(short int n, int* p)\n\n";
 }
 
 template <typename T>
@@ -41,6 +42,8 @@ void print(int* p)
 		cout << p[size-i-1];
 	cout << endl;
 	// 31 - 0 or 63 - 0
+
+	cout << "\n# END FUNCTION print(int* p)\n\n";
 }
 
 template <typename T>
@@ -96,6 +99,7 @@ void printFields(int* p)
 
 	cout << endl;
 
+	cout << "# END FUNCTION printFields(int* p)\n\n";
 }
 
 template <typename T>
@@ -123,6 +127,8 @@ void pack(T* pFloat, int* p)
 		binaryDump(pShort[index], p + 16 * index);
 
 	}
+
+	cout << "\n# END FUNCTION pack(T* pFloat, int* p)\n\n";
 }
 
 int main()
@@ -174,4 +180,6 @@ int main()
 	printFields<double>(p);
 	delete[] p;
 	return 0;
+
+	cout << "# END FUNCTION MAIN  \n\n";
 }
