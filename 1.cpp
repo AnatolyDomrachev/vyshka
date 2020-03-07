@@ -28,7 +28,7 @@ void printFields(int* p)
 {
 	int size(8 * sizeof(T));
 	// binary fields S, E, M
-	cout << p[size-1] < 0 ? 1 : 0; // 31 or 63
+	cout << ( p[size-1] < 0 ? 1 : 0) ; // 31 or 63
 	switch (sizeof(T))
 	{
 	case 4 :
