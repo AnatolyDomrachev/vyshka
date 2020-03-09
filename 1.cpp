@@ -3,12 +3,10 @@
 #include <iostream>
 using namespace std;
 
-int unpack(int *p)
+template <typename T>
+void unpack(int *p)
 {
 	cout << "Unpack function!!!" << endl;
-	
-	for (int i = 0; i < 32; ++i)
-		cout << p[32-i-1];
 
 #pragma pack(push, 1)
 	struct byte
@@ -24,14 +22,9 @@ int unpack(int *p)
 	};
 #pragma pack(pop)
 
-	//int p[] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,1,1,1,1,0,0};
-	//int p[] = {1,0,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
-	//int p[] = {0,0,1,1,1,1,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+	struct byte pb[sizeof(T)];
 
-
-	struct byte pb[4];
-
-	for( int i=0; i<4 ; i++ )
+	for( int i=0; i<sizeof(T) ; i++ )
 	{
 		pb[i].b1 = p[(i)*8];
 		pb[i].b2 = p[(i)*8+1];
@@ -43,12 +36,10 @@ int unpack(int *p)
 		pb[i].b8 = p[(i)*8+7];
 	}
 
-	float* x = (float*)pb ;
+	T* x = (T*)pb ;
 	//cout.precision(8);
 	cout << "x = " << *x << endl;
 	//printf("%.1f\n", *x);
-
-	return 0;
 }
 
 
@@ -134,7 +125,7 @@ int main()
 	print<float>(p);
 	printFields<float>(p);
 
-	unpack(p);
+	unpack<float>(p);
 
 	delete[] p;
 	cout << endl;
@@ -143,6 +134,9 @@ int main()
 	pack<double>(&d, p);
 	print<double>(p);
 	printFields<double>(p);
+
+	unpack<double>(p);
+
 	delete[] p;
 	return 0;
 }
