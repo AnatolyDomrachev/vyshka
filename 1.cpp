@@ -37,8 +37,8 @@ void unpack(int *p)
 	}
 
 	T* x = (T*)pb ;
-	//cout.precision(8);
-	cout << "x = " << *x << endl;
+	cout.precision(1);
+	cout << fixed << "x = " << *x << endl;
 	//printf("%.1f\n", *x);
 }
 
