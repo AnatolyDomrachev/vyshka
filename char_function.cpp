@@ -1,4 +1,6 @@
 #include <iostream>
+#include "stdio.h"
+
 using namespace std;
 
 struct byte
@@ -16,19 +18,20 @@ struct byte
 int main()
 {
 	struct byte pb;
-	pb.b1 = 0;
+	pb.b1 = 1;
 	pb.b2 = 1;
-	pb.b3 = 1;
-	pb.b4 = 1;
-	pb.b5 = 1;
-	pb.b6 = 1;
-	pb.b7 = 1;
-	pb.b8 = 1;
+	pb.b3 = 0;
+	pb.b4 = 0;
+	pb.b5 = 0;
+	pb.b6 = 0;
+	pb.b7 = 0;
+	pb.b8 = 0;
 
 	unsigned char* x;
-	x = (unsigned char*)&pb ;
+	x = (unsigned char*)&pb ;//теперь компилятор считает, что в памяти по адресу &pb находится unsigned char
 
-	cout << *x;
+	//cout << *x;
+	printf("%d \n", *x);
 }
 
 	
