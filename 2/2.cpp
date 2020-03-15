@@ -35,9 +35,8 @@ int main()
 	struct s_csi csi;
 	struct s_fd fd;
 
-	cout << "Выберите строка для одного из разновидностей дампа \n\t1 - (3 — для целочисленных (char, short, int) и \n\t2. для вещественных (float, double) чисел\n";
+	cout << "Выберите для одного из разновидностей дампа \n\t1 - (3 — для целочисленных (char, short, int) и \n\t2. для вещественных (float, double) чисел\n";
 	cout << endl;
-	cout << "Выберите строка для извлечения одного из разновидностей дампа \n\t3 (3 — для целочисленных (char, short, int) и \n\t4. для вещественных (float, double) чисел\n";
 	cin >> n;
 
 	switch(n)
@@ -45,7 +44,7 @@ int main()
 		case 1:
 			cout << "input char ";
 			cin >> csi.c;
-			cout << "input shor t";
+			cout << "input short ";
 			cin >> csi.s;
 			cout << "input int ";
 			cin >> csi.i;
@@ -58,6 +57,22 @@ int main()
 			}
 			else
 				fwrite( &csi, sizeof(csi), 1, pFile);
+
+			fclose(pFile);
+
+			pFile = fopen("csi.dump", "rb");
+			if (!pFile)
+			{
+				printf("Invalid opening file!\n");
+				return -1;
+			}
+			else
+				fread( &csi, sizeof(csi), 1, pFile);
+
+			cout << "Прочитали из файла:\n";
+			cout << csi.c<<endl;
+			cout << csi.s<<endl;
+			cout << csi.i<<endl;
 
 			fclose(pFile);
 
@@ -79,34 +94,6 @@ int main()
 
 			fclose(pFile);
 
-			break;
-
-		case 3:
-			cout << "input char ";
-			cin >> csi.c;
-			cout << "input shor t";
-			cin >> csi.s;
-			cout << "input int ";
-			cin >> csi.i;
-
-			pFile = fopen("csi.dump", "wb");
-			if (!pFile)
-			{
-				printf("Invalid opening file!\n");
-				return -1;
-			}
-			else
-				fwrite( &csi, sizeof(csi), 1, pFile);
-
-			fclose(pFile);
-
-			break;
-		case 4:
-			cout << "input float ";
-			cin >> fd.f;
-			cout << "input double ";
-			cin >> fd.d;
-	
 			pFile = fopen("fd.dump", "wb");
 			if (!pFile)
 			{
@@ -114,15 +101,16 @@ int main()
 				return -1;
 			}
 			else
-				fwrite( &fd, sizeof(fd), 1, pFile);
+				fread( &fd, sizeof(fd), 1, pFile);
+
+			cout << "Прочитали из файла:\n";
+			cout << fd.f<<endl;
+			cout << fd.d<<endl;
 
 			fclose(pFile);
 
 			break;
-
 	}
-
-
 
 	return 0;
 }
