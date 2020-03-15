@@ -1,0 +1,10 @@
+FILE* pFile;
+pFile = fopen("text.txt", "r");
+if (!pFile)
+{
+printf("Invalid opening file!\n");
+return -1;
+}
+else
+while(fgets(line, n, pFile)) printf(line);
+fclose(pFile);
