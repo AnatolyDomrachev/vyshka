@@ -1,4 +1,3 @@
-#include <string.h>
 #include <iostream>
 using namespace std;
 
@@ -40,7 +39,6 @@ int main()
 		cout << output[j] << " ";
 
 	fclose(pFile);
-
 
 	return 0;
 }
